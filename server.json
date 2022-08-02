@@ -1,8 +1,8 @@
 {
 	"variables": {
-		"client_id": "69bcb29e-3ad2-459c-a62c-94dcd3bbcaf9",
-		"client_secret": "mKI8Q~VZltbzAepPouf7Brkv~XGdRmcxjrTRman4",
-		"subscription_id": "aacb9d0b-b990-4adb-8ae5-aa48ff5715d2",
+		"client_id": "{{env `CLIENT_ID`}}",
+		"client_secret": "{{env `CLIENT_SECRET`}}",
+		"subscription_id": "{{env `SUBSCRIPTION_ID`}}",
 		"resource_group_name": "timi-webserver-rg"
 	},
 	"builders": [{
