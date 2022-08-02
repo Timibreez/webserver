@@ -1,0 +1,41 @@
+{
+	"variables": {
+		"client_id": "69bcb29e-3ad2-459c-a62c-94dcd3bbcaf9",
+		"client_secret": "mKI8Q~VZltbzAepPouf7Brkv~XGdRmcxjrTRman4",
+		"subscription_id": "aacb9d0b-b990-4adb-8ae5-aa48ff5715d2",
+		"resource_group_name": "timi-webserver-rg"
+	},
+	"builders": [{
+		
+		"type": "azure-arm",
+  
+		"client_id": "{{user `client_id`}}",
+		"client_secret": "{{user `client_secret`}}",
+		"subscription_id": "{{user `subscription_id`}}",
+	
+		"os_type": "Linux",
+		"image_publisher": "Canonical",
+		"image_offer": "UbuntuServer",
+		"image_sku": "18.04-LTS",
+
+		"managed_image_resource_group_name": "{{user `resource_group_name`}}",
+		"managed_image_name": "timiImage",
+	
+		"location": "East US",
+		"vm_size": "Standard_D2S_v3",
+
+		"azure_tags": {
+			"environment": "Development"
+		}
+	}],
+	"provisioners": [{
+		"inline": [
+	    "apt-get update",
+        "apt-get upgrade -y",
+			"echo 'Hello, World!' > index.html",
+			"nohup busybox httpd -f -p 80 &"
+		],
+		"inline_shebang": "/bin/sh -x",
+		"type": "shell"
+	}]
+}
