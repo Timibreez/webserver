@@ -72,8 +72,9 @@ the default option is optional, and is only required if you want to add a fallba
 #### Confirm resources creation using:
 ``` terraform show ```
     - or log into azure portal and check created resources
+  ![Screenshot from 2022-08-03 00-54-51](https://user-images.githubusercontent.com/43646129/182497181-36014ea0-60b5-4974-8ff9-6f1751b7a041.png)
+  
     
-    ![Screenshot from 2022-08-03 00-54-51](https://user-images.githubusercontent.com/43646129/182497024-0e89cb7e-5b4d-4839-a6aa-188d3230781c.png)
 
 ### GoodLuck
 
