@@ -55,6 +55,16 @@ For this project, you will write a Packer template and a Terraform template to d
 
   terraform apply "solution.plan"  
 ```
+### description for variables.tf
+you could add as many variables as you require, changing them from hardcoded states to dynamic in your main.tf file, by refrencing them in the variables.tf file. see below for syntax example:
+```
+variable "vm-update-count" {
+  description = "The amount of VMs that will be created when a specific one is updating the OS system."
+  default     = 5
+}
+
+```
+the default option is optional, and is only required if you want to add a fallback if the resource type or field is not specified.
 
 ### Output
 **Your words here**
